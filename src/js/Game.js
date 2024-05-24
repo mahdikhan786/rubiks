@@ -109,7 +109,7 @@ class Game {
 
   initActions() {
 
-    let tappedTwice = false;
+    let tappedTwice = true;
 
     this.dom.game.addEventListener( 'click', event => {
 
@@ -211,7 +211,7 @@ class Game {
 
       this.transition.buttons( BUTTONS.None, BUTTONS.Menu );
 
-      this.transition.zoom( STATE.Playing, duration );
+      // this.transition.zoom( STATE.Playing, duration );
       this.transition.title( HIDE );
 
       setTimeout( () => {
@@ -313,8 +313,9 @@ class Game {
 
       setTimeout( () => this.transition.preferences( SHOW ), 1000 );
       setTimeout( () => {
-
-        const gameCubeData = JSON.parse( localStorage.getItem( 'theCube_savedState' ) );
+        // saved state - mod
+        // const gameCubeData = JSON.parse( localStorage.getItem( 'theCube_savedState' ) );
+        const gameCubeData = false;
 
         if ( !gameCubeData ) {
 

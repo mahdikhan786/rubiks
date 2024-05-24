@@ -351,3 +351,6 @@ body {
 .ui__buttons {
   z-index: 5;
 }
+.hide{
+display: none !important;
+}

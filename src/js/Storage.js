@@ -31,8 +31,10 @@ class Storage {
       const gameInProgress = localStorage.getItem( 'theCube_playing' ) === 'true';
 
       if ( ! gameInProgress ) throw new Error();
+      // mod - save game 
+      // const gameCubeData = JSON.parse( localStorage.getItem( 'theCube_savedState' ) );
 
-      const gameCubeData = JSON.parse( localStorage.getItem( 'theCube_savedState' ) );
+      const gameCubeData = false;
       const gameTime = parseInt( localStorage.getItem( 'theCube_time' ) );
 
       if ( ! gameCubeData || gameTime === null ) throw new Error();

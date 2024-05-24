@@ -32,19 +32,21 @@ class Scrambler {
 			const modifiers = [ "", "'", "2" ];
 			const total = ( typeof scramble === 'undefined' ) ? scrambleLength : scramble;
 
-			while ( count < total ) {
+			// while ( count < total ) {
 
-				const move =
-					faces[ Math.floor( Math.random() * faces.length ) ] +
-					modifiers[ Math.floor( Math.random() * 3 ) ];
+			// 	const move =
+			// 		faces[ Math.floor( Math.random() * faces.length ) ] +
+			// 		modifiers[ Math.floor( Math.random() * 3 ) ];
 
-				if ( count > 0 && move.charAt( 0 ) == this.moves[ count - 1 ].charAt( 0 ) ) continue;
-				if ( count > 1 && move.charAt( 0 ) == this.moves[ count - 2 ].charAt( 0 ) ) continue;
+			// 	if ( count > 0 && move.charAt( 0 ) == this.moves[ count - 1 ].charAt( 0 ) ) continue;
+			// 	if ( count > 1 && move.charAt( 0 ) == this.moves[ count - 2 ].charAt( 0 ) ) continue;
 
-				this.moves.push( move );
-				count ++;
+			// 	this.moves.push( move );
+			// 	count ++;
 
-			}
+			// }
+
+				this.moves.push(...["U", "D", "F", "B"]);
 
 		}
 
