@@ -61,8 +61,9 @@ class Scrambler {
 			3:["B","B", "D", "U'", "F","F", "D'", "B","B", "R","R", "B","B", "L","L", "U","U","F", "L", "D","D", "B","B","F", "D", "F", "U","U", "F", "R","R"],
 			4:["F","F", "D", "R","R", "U","U", "L", "L","U", "B","B", "U","U", "L","L", "B'", "L","L", "F'", "L", "F", "L", "B", "U'", "R","R"],
 			5:["D'", "F","F", "D'", "R","R", "B","B", "U", "L","L", "U","U", "B", "U", "B", "R","R", "D'", "B", "D","D", "B'"],
-			6:["U'", "R","R", "U", "R","R", "D","D", "R","R", "U'", "R","R", "U", "R", "U'", "R", "B","B", "R'", "U", "R'"],
-		}
+			6:["L","L", "B","B", "D", "B","B", "D'", "B","B", "U", "B","B", "U'", "L","L", "R'", "D'", "R", "D'", "R'", "D","D", "R"],
+			7:["U'", "R","R", "U", "R","R", "D","D", "R","R", "U'", "R","R","U", "R", "U'", "R", "D","D", "R'", "U", "R'"],
+		}	
 		if(params){
 			const moduleNumber = Number(params.get('module'));
 			if(moduleNumber <= Object.keys(scrambleModuleMapping).length){
