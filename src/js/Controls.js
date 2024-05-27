@@ -247,7 +247,7 @@ class Controls {
 
     this.rotationTween = new Tween( {
       easing: easing,
-      duration: 500,
+      duration: 100,
       onUpdate: tween => {
 
         let deltaAngle = tween.delta * rotation;

@@ -20,6 +20,57 @@ class Scrambler {
 	}
 
 	scramble( scramble ) {
+		const params = new URLSearchParams(window?.location?.search);
+		let module = 1;
+		const scrambleModuleMapping = {
+			1:["U'", "L","L", "F", "B'", "U","U", "R","R", "B", "U","U", "F","F", "R", 
+			"D", "D","D", "L'", "F", "L","L", "B","B" ,"L", "U'", "D'", "U", 
+			"R'", "B", "F'", "U'", "L", "D", "R","R", "F","F" ,"B'", "R"],
+			2:[
+			"B",
+			"B",
+			"F",
+			"F",
+			"L",
+			"L",
+			"U'",
+			"L",
+			"L",
+			"F",
+			"F",
+			"L",
+			"L",
+			"F",
+			"F",
+			"U",
+			"U",
+			"R'",
+			"F'",
+			"D'",
+			"B'",
+			"R",
+			"R",
+			"F",
+			"D'",
+			"B'",
+			"L'",
+			"D",
+			"L",
+			"L",
+			"U'"],
+			3:["B","B", "D", "U'", "F","F", "D'", "B","B", "R","R", "B","B", "L","L", "U","U","F", "L", "D","D", "B","B","F", "D", "F", "U","U", "F", "R","R"],
+			4:["F","F", "D", "R","R", "U","U", "L", "L","U", "B","B", "U","U", "L","L", "B'", "L","L", "F'", "L", "F", "L", "B", "U'", "R","R"],
+			5:["D'", "F","F", "D'", "R","R", "B","B", "U", "L","L", "U","U", "B", "U", "B", "R","R", "D'", "B", "D","D", "B'"],
+			6:["U'", "R","R", "U", "R","R", "D","D", "R","R", "U'", "R","R", "U", "R", "U'", "R", "B","B", "R'", "U", "R'"],
+		}
+		if(params){
+			const moduleNumber = Number(params.get('module'));
+			if(moduleNumber <= Object.keys(scrambleModuleMapping).length){
+				module = moduleNumber;
+			}
+		}
+		
+		console.log("module Moves",scrambleModuleMapping[module]);
 
 		let count = 0;
 		this.moves = ( typeof scramble !== 'undefined' ) ? scramble.split( ' ' ) : [];
@@ -46,7 +97,7 @@ class Scrambler {
 
 			// }
 
-				this.moves.push(...["U", "D", "F", "B"]);
+				this.moves.push(...scrambleModuleMapping[module]);
 
 		}
 
