@@ -544,7 +544,13 @@ class Controls {
   }
 
   checkIsSolved() {
-
+    const params = new URLSearchParams(window?.location?.search);
+    if(params){
+			const moduleNumber = Number(params.get('module'));
+			if(!moduleNumber){
+        return;
+      }
+		}
     const start = performance.now();
 
     let solved = true;

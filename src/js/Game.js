@@ -110,18 +110,23 @@ class Game {
   initActions() {
 
     let tappedTwice = true;
-    // instant start
     // const params = new URLSearchParams(window?.location?.search);
-		// let module = 1;
+    // if(params){
+		// 	const reset = Number(params.get('reset'));
+		// 	if(reset){
+				  // instant start
+  
 		// if(params){
 		// 	module = params.get('module');
 		// }
     // if(Number(params) > 1){
-    //   setTimeout(() => {
-    //     this.game( SHOW );
-  
-    //   }, 200);
+      setTimeout(() => {
+        this.game( SHOW );
+      }, 1500);
     // }
+		// 	}
+		// }
+  
   
 
     this.dom.game.addEventListener( 'click', event => {

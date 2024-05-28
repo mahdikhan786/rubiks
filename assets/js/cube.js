@@ -1757,7 +1757,13 @@
 	  }
 
 	  checkIsSolved() {
-
+	    const params = new URLSearchParams(window?.location?.search);
+	    if(params){
+				const moduleNumber = Number(params.get('module'));
+				if(!moduleNumber){
+	        return;
+	      }
+			}
 	    performance.now();
 
 	    let solved = true;
@@ -1811,11 +1817,12 @@
 
 		scramble( scramble ) {
 			const params = new URLSearchParams(window?.location?.search);
-			let module = 1;
+			let module = 0;
 			const scrambleModuleMapping = {
+				0:["U", "U'", "D","D'","L","L'","R","R'","B","B'","F","F'"],
 				1:["U'", "L","L", "F", "B'", "U","U", "R","R", "B", "U","U", "F","F", "R", 
 				"D", "D","D", "L'", "F", "L","L", "B","B" ,"L", "U'", "D'", "U", 
-				"R'", "B", "F'", "U'", "L", "D", "R","R", "F","F" ,"B'", "R"],
+				"R'", "B", "F'", "U'", "L", "D", "R","R", "F","F" ,"B'", "R"], // random scramble
 				2:[
 				"B",
 				"B",
@@ -1847,8 +1854,8 @@
 				"D",
 				"L",
 				"L",
-				"U'"],
-				3:["B","B", "D", "U'", "F","F", "D'", "B","B", "R","R", "B","B", "L","L", "U","U","F", "L", "D","D", "B","B","F", "D", "F", "U","U", "F", "R","R"],
+				"U'"], // white cross
+				3:["B","B", "D", "U'", "F","F", "D'", "B","B", "R","R", "B","B", "L","L", "U","U","F", "L", "D","D", "B","B","F", "D", "F", "U","U", "F", "R","R"], // white edges
 				4:["F","F", "D", "R","R", "U","U", "L", "L","U", "B","B", "U","U", "L","L", "B'", "L","L", "F'", "L", "F", "L", "B", "U'", "R","R"],
 				5:["D'", "F","F", "D'", "R","R", "B","B", "U", "L","L", "U","U", "B", "U", "B", "R","R", "D'", "B", "D","D", "B'"],
 				6:["L","L", "B","B", "D", "B","B", "D'", "B","B", "U", "B","B", "U'", "L","L", "R'", "D'", "R", "D'", "R'", "D","D", "R"],
@@ -1856,7 +1863,7 @@
 			};	
 			if(params){
 				const moduleNumber = Number(params.get('module'));
-				if(moduleNumber <= Object.keys(scrambleModuleMapping).length){
+				if(moduleNumber && moduleNumber <= Object.keys(scrambleModuleMapping).length){
 					module = moduleNumber;
 				}
 			}
@@ -3822,18 +3829,23 @@
 	  }
 
 	  initActions() {
-	    // instant start
 	    // const params = new URLSearchParams(window?.location?.search);
-			// let module = 1;
+	    // if(params){
+			// 	const reset = Number(params.get('reset'));
+			// 	if(reset){
+					  // instant start
+	  
 			// if(params){
 			// 	module = params.get('module');
 			// }
 	    // if(Number(params) > 1){
-	    //   setTimeout(() => {
-	    //     this.game( SHOW );
-	  
-	    //   }, 200);
+	      setTimeout(() => {
+	        this.game( SHOW );
+	      }, 1500);
 	    // }
+			// 	}
+			// }
+	  
 	  
 
 	    this.dom.game.addEventListener( 'click', event => {
