@@ -355,3 +355,68 @@ body {
 .hide{
 display: none !important;
 }
+.heading{
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  margin-top: 8rem;
+  font-size: 8rem;
+  font-weight: 900;
+  font-family: "Nunito", sans-serif;;
+  text-transform: initial;
+
+}
+.subheading{
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  margin-top: 2rem;
+  font-size: 5rem;
+  font-weight: 600;
+  color: #3d4d5d;
+  font-family: "Nunito", sans-serif;
+  text-transform: initial;
+}
+.companylogo{
+  height: 6rem;
+  width: auto;
+  z-index: 2;
+  position: absolute;
+  bottom: 5rem;
+  left: 50vw;
+  transform: translate(-50%, 0);
+
+}
+.ui{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ui__game{
+  cursor: grab;
+}
+@media only screen and (max-width: 800px){
+  .companylogo{
+    height: 10rem;
+    width: auto;
+    text-align: center;
+  }
+  .heading{
+    text-align: center;
+    margin-top: 10rem;
+    font-size: 11rem;
+    font-weight: 900;
+    font-family: "Nunito", sans-serif;;
+    text-transform: initial;
+  
+  }
+  .subheading{
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 6rem;
+    font-weight: 800;
+    color: #3d4d5d;
+    font-family: "Nunito", sans-serif;
+    text-transform: initial;
+  } 
+}
